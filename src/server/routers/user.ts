@@ -89,12 +89,19 @@ export const userRouter = router({
 
   getUser: publicProcedure.query(async ({ ctx }) => {
     try {
-      const id = ctx.id;
+      const id = ctx.id
+      
+      if(!id){
+        return{
+          code: "CLERKID_NOT_FOUND",
+          message: "clerkUserId not found",
+        }
+      }
 
       const foundUser = await db.query.user.findFirst({
         where: eq(user.clerkUserId, id),
       });
-
+      
       if (!foundUser) {
         return{
           code: "NOT_FOUND",
