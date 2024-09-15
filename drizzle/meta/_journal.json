@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1726397961870,
+      "tag": "0000_user_table_added",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1726408919766,
+      "tag": "0001_added_clerUserId_and_email_in_user_table",
+      "breakpoints": true
+    }
+  ]
+}
