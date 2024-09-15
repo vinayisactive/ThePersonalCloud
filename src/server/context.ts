@@ -4,7 +4,7 @@ import { emit } from "process";
 
 export const createContext = async(req: Request) => {
       const user = await currentUser();
-      const id = user?.emailAddresses[0]?.id;
+      const id = user?.id
       const email = user?.emailAddresses[0].emailAddress;
       
       return { id, email };
