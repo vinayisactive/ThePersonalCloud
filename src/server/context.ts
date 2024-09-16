@@ -1,6 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { inferAsyncReturnType } from "@trpc/server";
-import { emit } from "process";
 
 export const createContext = async(req: Request) => {
       const user = await currentUser();
