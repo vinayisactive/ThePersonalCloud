@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       return new NextResponse('Missing svix headers', { status: 400 });
     }
 
-    const ctx = await createContext(req);
+    const ctx = await createContext();
     const result = await appRouter.user.handleClerkWebhook({
         ctx,
         rawInput: {
