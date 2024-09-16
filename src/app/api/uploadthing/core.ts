@@ -3,15 +3,15 @@ import { createUploadthing, type FileRouter } from "uploadthing/next";
 const f = createUploadthing();
 
 export const ourFileRouter = {
-  imageUploader: f({ image: { maxFileSize: "16MB", maxFileCount: 10 }})
-    .onUploadComplete(async ({ file }) => {
-      console.log("file url", file.url);
+  imageUploader: f({ image: { maxFileSize: "16MB", maxFileCount: 1 }})
+    .onUploadComplete(async ({ file }) => {     
+      console.log(file)
       return { url: file.url };
-    }),
+    }),   
 
     fileUploader: f(["text", "pdf", "audio", "video"])
     .onUploadComplete(async ({ file }) => {
-      console.log("File uploaded:", file.url);
+      console.log(file)
       return { url: file.url };
     }),
 

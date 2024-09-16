@@ -10,7 +10,17 @@ const page = () => {
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
           console.log("Files: ", res);
-          alert("Upload Completed");
+        }}
+        onUploadError={(error: Error) => {
+          console.log(error)
+          alert(`ERROR! ${error}`);
+        }}
+      />
+
+     <UploadButton
+        endpoint="fileUploader"
+        onClientUploadComplete={(res) => {
+          console.log("Files: ", res);
         }}
         onUploadError={(error: Error) => {
           console.log(error)
