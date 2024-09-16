@@ -12,7 +12,7 @@ export const ourFileRouter = {
 
       if(file.url){
        const ctx = await createContext();
-       upload = await appRouter.file.uploadFile({
+       upload = await appRouter.image.uploadImage({
         ctx, 
         rawInput: {
           url: file.url,
@@ -20,7 +20,7 @@ export const ourFileRouter = {
           name: file.url,
           size: file.size
         },
-        path: "fiel.uploadFile",
+        path: "image.uploadImage",
         type: "mutation"
        })
       }
