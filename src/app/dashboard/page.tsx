@@ -7,7 +7,7 @@ const page = () => {
       <h1 className="text-black">Dashboard</h1>
 
       <UploadButton
-        endpoint="fileUploader"
+        endpoint="imageUploader"
         onClientUploadComplete={(res) => {
           console.log("Files: ", res);
           alert("Upload Completed");
