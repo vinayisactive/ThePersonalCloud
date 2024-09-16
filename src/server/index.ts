@@ -1,13 +1,13 @@
 import { router } from "./trpc";
 import { userRouter } from "./routers/user";
 import { noteRouter } from "./routers/notes";
-import { photoRouter } from "./routers/photos";
+import { imageRouter } from "./routers/images";
 import { fileRouter } from "./routers/files";
 
 export const appRouter = router({
     user: userRouter,
     note: noteRouter,
-    photo: photoRouter,
+    image: imageRouter,
     file: fileRouter
 }); 
 
