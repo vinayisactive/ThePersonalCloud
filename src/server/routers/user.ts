@@ -98,8 +98,6 @@ export const userRouter = router({
         }
       }
 
-      console.log(id);
-
       const foundUser = await db.query.user.findFirst({
         where: eq(user.clerkUserId, id),
       });
