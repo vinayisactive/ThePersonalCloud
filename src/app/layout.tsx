@@ -4,6 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Provider from "./_trpc/Provider";
 
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthings/core";
+
+
 export const metadata: Metadata = {
   title: "ThePersonalCloud",
   description: "Personal cloud management tool",
@@ -16,6 +21,7 @@ export default function RootLayout({ children,}: Readonly<{ children: React.Reac
       <body>       
         <Navbar />
         <Provider>
+        <NextSSRPlugin  routerConfig={extractRouterConfig(ourFileRouter)} />
         {children}
         </Provider>
       </body>
