@@ -15,6 +15,13 @@
       "when": 1726408919766,
       "tag": "0001_added_clerUserId_and_email_in_user_table",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1726471434385,
+      "tag": "0002_added_files_photos_and_notes_tables",
+      "breakpoints": true
     }
   ]
 }
