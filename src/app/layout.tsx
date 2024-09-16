@@ -6,7 +6,7 @@ import Provider from "./_trpc/Provider";
 
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
-import { ourFileRouter } from "./api/uploadthings/core";
+import { ourFileRouter } from "./api/uploadthing/core";
 
 
 export const metadata: Metadata = {
