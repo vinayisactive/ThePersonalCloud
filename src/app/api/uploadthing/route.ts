@@ -3,7 +3,7 @@ import { ourFileRouter } from "./core";
 
 export const { GET, POST } = createRouteHandler({
   router: ourFileRouter,
-  config: {
-    // token: process.env.UPLOADTHING_TOKEN as string
+  config:{
+    token: 'eyJhcGlLZXkiOiJza19saXZlX2RhYzA1MDBiYzJhODI5ZDFkMjFjOTk1NWJkNTMxNDgzNmI3OWQwNjUyMzc4ZjYxYTAwZGE4YzBkYmQ2MmI4MmYiLCJhcHBJZCI6InVzcHJkNmc1OTUiLCJyZWdpb25zIjpbInNlYTEiXX0='
   }
 });
