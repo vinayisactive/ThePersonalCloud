@@ -33,7 +33,7 @@ const Cloud = () => {
               {isLoading
                 ? "loading..."
                 : `${
-                    files?.length === undefined ? "0" : files.length
+                    files?.length === undefined ? "0" : files?.length
                   } Recent files`}
             </div>
           </div>

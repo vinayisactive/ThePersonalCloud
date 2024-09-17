@@ -30,7 +30,7 @@ const Photos = () => {
               {isLoading
                 ? "loading..."
                 : `Library ${
-                    files?.length === undefined ? "0" : files.length
+                    files?.length === undefined ? "0" : files?.length
                   } Photos`}
             </div>
           </div>
