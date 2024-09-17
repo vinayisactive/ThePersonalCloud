@@ -22,7 +22,7 @@ export default function RootLayout({ children,}: Readonly<{ children: React.Reac
         <Navbar />
         <Provider>
         <NextSSRPlugin  routerConfig={extractRouterConfig(ourFileRouter)} />
-        {children}
+           {children}
         </Provider>
       </body>
     </html>
