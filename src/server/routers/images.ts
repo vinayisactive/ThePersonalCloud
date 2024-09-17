@@ -60,10 +60,10 @@ export const imageRouter = router({
           }
           console.error("Error fetching user files:", error);
     
-          throw new TRPCError({
+          return {
             code: "INTERNAL_SERVER_ERROR",
             message: "An unexpected error occurred while fetching the files",
-          });
+          }
         }
     }),
 
@@ -76,6 +76,10 @@ export const imageRouter = router({
 
         if (!id) {
           return {
+            data: {
+              id: ctx.id,
+              email: ctx.email
+            },
             code: "UNAUTHORIZED",
             message: "User is unauthorized",
           };

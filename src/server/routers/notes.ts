@@ -6,7 +6,7 @@ import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 
 const uploadNoteSchema = z.object({
-  note: z.string().min(1),
+  note: z.string(),
 });
 
 const updateNoteSchema = z.object({

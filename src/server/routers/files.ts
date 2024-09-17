@@ -42,14 +42,14 @@ export const fileRouter = router({
 
       if (!userFiles.length) {
         return {
-          files: [],
+          data: [],
           total: 0,
           message: "No files found for the user",
         };
       }
 
       return {
-        files: userFiles,
+        data: userFiles,
         total: userFiles.length,
         message: "Files fetched successfully",
       };
