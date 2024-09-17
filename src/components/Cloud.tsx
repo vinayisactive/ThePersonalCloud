@@ -72,7 +72,7 @@ const Cloud = () => {
           </div>
         ) : (
           <div className="w-full h-full flex justify-center items-center">
-            {files.length ? (
+            {files?.length ? (
               <div className="w-full h-full overflow-x-scroll flex gap-3">
                 {files?.map(
                   (file: { url: string; key: string; name: string }) => {
@@ -89,8 +89,8 @@ const Cloud = () => {
                           height={100}
                         />
                         <p className="text-black text-sm shrink-0">
-                          {file.name.length > 10
-                            ? file.name.slice(0, 10)
+                          {file?.name?.length > 10
+                            ? file.name?.slice(0, 10)
                             : file.name}
                         </p>
                       </Link>
