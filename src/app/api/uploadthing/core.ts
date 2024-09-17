@@ -1,47 +1,20 @@
-import { appRouter } from "@/server";
-import { createContext } from "@/server/context";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 
 const f = createUploadthing();
 
 export const ourFileRouter = {
-  imageUploader: f({ image: { maxFileSize: "16MB", maxFileCount: 1 }})
-    .onUploadComplete(async ({ file }) => {   
-      
-      let upload; 
+  imageUploader: f({
+    image: { maxFileSize: "16MB", maxFileCount: 1 },
+  }).onUploadComplete(async({ file }) => {
+    return {file};
+  }),
 
-      if(file.url){
-       const ctx = await createContext();
-       upload = await appRouter.image.uploadImage({
-        ctx, 
-        rawInput: {
-          url: file.url,
-          key: file.url,
-          name: file.url,
-          size: file.size
-        },
-        path: "image.uploadImage",
-        type: "mutation"
-       })
-      }
-
-      if(!upload){
-        return {
-          success: false
-        }
-      }
-      
-      return { 
-        success: true
-      };
-    }),   
-
-    fileUploader: f(["text", "pdf", "audio", "video"])
-    .onUploadComplete(async ({ file }) => {
-      console.log(file)
-      return { url: file.url };
-    }),
-
+  fileUploader: f(
+    ["text", "pdf", "audio", "video"]
+  ).onUploadComplete(async ({ file }) => {
+      return {file};
+    }
+  ),
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;
